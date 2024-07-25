@@ -31,23 +31,3 @@ body {
     text-wrap: balance;
   }
 }
-@font-face {
-  font-family: 'Lato';
-  src: url('C:/Users/micha/OneDrive/Desktop/Personal/Repositories/Projects/MichaelJermaine/mjermaine/public/Fonts/Lato/Lato-Black.ttf') format('ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.Montserrat{
-  font-family: var(--font-montserrat);
-}
-.Lato{
-  font-family: var(--font-lato);
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('/C:/Users/micha/OneDrive/Desktop/Personal/Repositories/Projects/MichaelJermaine/mjermaine/public/Fonts/Lato/Lato-Black.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
