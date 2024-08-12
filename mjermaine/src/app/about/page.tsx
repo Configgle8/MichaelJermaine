@@ -2,19 +2,26 @@
 
 import { useRouter } from 'next/navigation';
 import type { NextPage } from 'next';
-import Carousel from '../components/Info'; // Make sure this path is correct
 
-const images = [
-  { src: '/assets/Achieve.jpg', link: '/pages/page1'},
-  {src: '/assets/Journey.jpg', link: '/pages/page2'},
-  {src: '/assets/Interests.jpg', link: '/pages/page3'}
-];
 
 const About: NextPage = () => {
   const router = useRouter();
 
   const handleBackClick = () => {
     router.push('/');
+  };
+
+  const handleClick = (destination: string) => {
+    if (destination === 'achievements') {
+      console.log('Navigating to Achievements page');
+      router.push('/achievements');
+    } else if (destination === 'background') {
+      console.log('Navigating to Background');
+      router.push('/background');
+    } else if (destination === 'E&P') {
+      console.log('Navigating to Education');
+      router.push('/E&P');
+    }
   };
 
   return (
@@ -27,20 +34,21 @@ const About: NextPage = () => {
           <h1 className="text-3xl md:text-4xl lg:text-7xl font-bold bg-clip-text text-gray-700 hover:scale-110 hover:text-blue-800 duration-1000 cursor-none whitespace-nowrap">
             Who is Michael?
           </h1>
-          <p className="text-center mt-2 text-gray-600">"If there is no struggle, there is no progress” ~ Frederick Douglas 
-
-</p>
+          <p className="text-center mt-2 text-gray-600">"If there is no struggle, there is no progress” ~ Frederick Douglas </p>
         </div>
 
         {/* Right Side */}
-        <div className="flex-1 bg-gray-200 p-8 flex flex-col items-center">
-          <div className="mt-32 w-auto h-1/2 bg-blue-700 flex justify-center rounded-xl shadow-2xl opacity-80 hover:opacity-100 duration-1000 overflow-hidden h-72">
-          <Carousel images={images} />
+        <div className="flex-1 gap-10 bg-gray-200 p-8 flex flex-col items-center justify-center">
+          <div className="flex w-full rounded-lg shadow-2xl bg-gradient-to-r from-white to-gray-200 hover:bg-white ">
+          <a onClick={() => handleClick('achievements')}><h1 className="p-4 cursor-pointer font-bold bg-clip-text text-gray-700 hover:scale-110 hover:text-blue-800 duration-1000 whitespace-nowrap">Achievements & Awards</h1></a>
           </div>
-          <div className="mt-10 text-center">
-            <p className="text-gray-600">
-              Select one of the pictures to read about a different aspect of my background. Super excited to be in contact with you, always seeking collaboration on projects & work<span className='text-5xl'> &#128101;</span>
-            </p>
+
+          <div className="flex w-full rounded-lg shadow-2xl bg-gradient-to-r from-white to-gray-200 hover:bg-white ">
+          <a onClick={() => handleClick('background')}><h1 className="p-4 cursor-pointer font-bold bg-clip-text text-gray-700 hover:scale-110 hover:text-blue-800 duration-1000 whitespace-nowrap">My Background</h1></a>
+          </div>
+
+          <div className="flex w-full rounded-lg shadow-2xl bg-gradient-to-r from-white to-gray-200 hover:bg-white ">
+          <a onClick={() => handleClick('E&P')}><h1 className="p-4 cursor-pointer font-bold bg-clip-text text-gray-700 hover:scale-110 hover:text-blue-800 duration-1000 whitespace-nowrap">Education & Profession</h1></a>
           </div>
         </div>
       </div>
