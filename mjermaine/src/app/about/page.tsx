@@ -14,7 +14,7 @@ const About: NextPage = () => {
   const router = useRouter();
 
   const handleBackClick = () => {
-    router.push('/page');
+    router.push('/');
   };
 
   return (
