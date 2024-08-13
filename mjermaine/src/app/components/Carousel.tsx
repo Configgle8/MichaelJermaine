@@ -1,45 +1,39 @@
-// Carousel.tsx
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const images = [
   '/assets/Achieve.jpg',
-  '/assets/Journey.jpg',
-  '/assets/Interests.jpg'
+  '/assets/Sausage.jpg',
+  '/assets/Interests.jpg',
+  '/assets/Bucks.jpg',
+  '/assets/Hoan.jpg',
+  '/assets/Fair.png'
+
 ];
 
 const Carousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [fade, setFade] = useState('opacity-100');
 
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade('opacity-0'); // Start fading out
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+        setFade('opacity-100'); // Start fading in
+      }, 500); // Duration of the fade-out
+    }, 5000); // Change image every 5 seconds
 
-  const goToPrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
+    return () => clearInterval(interval); // Clear interval on component unmount
+  }, []);
 
   return (
-    <div className="relative">
+    <div className="relative w-full max-w-full h-full max-h-full overflow-hidden">
       <img
         src={images[currentIndex]}
         alt={`Slide ${currentIndex + 1}`}
-        className="w-full h-72 object-cover rounded-lg"
+        className={`absolute inset-0 object-cover w-full h-full transition-opacity duration-700 ${fade}`}
       />
-      <button
-        onClick={goToPrevious}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full"
-      >
-        &#9664; {/* Previous arrow (◀) */}
-      </button>
-      <button
-        onClick={goToNext}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full"
-      >
-        &#9654; {/* Next arrow (▶) */}
-      </button>
     </div>
   );
 };

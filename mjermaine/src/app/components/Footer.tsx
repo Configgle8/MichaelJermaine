@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faX } from '@fortawesome/free-solid-svg-icons'; // Correct import
+import { faEnvelope,faX } from '@fortawesome/free-solid-svg-icons'; // Correct import
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const socialLinks = [
