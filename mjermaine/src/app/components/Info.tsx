@@ -1,25 +1,62 @@
-'use client'; // Ensure this is a client component
+'use client';
+// components/Carousel.tsx
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
-import Link from 'next/link';
-import Achieve from '../assets/Achieve.jpg'
+interface Image {
+  src: string;
+  link: string;
+}
 
-const Info = () => {
+interface CarouselProps {
+  images: Image[];
+}
+
+const Info: React.FC<CarouselProps> = ({ images }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const router = useRouter(); // Use router from next/router
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleClick = () => {
+    router.push(images[currentIndex].link); // Navigate to the link
+  };
+
   return (
-    <div className="flex flex-col items-center space-y-4 p-8">
-      <div className="flex flex-col space-y-4">
-        <Link href="/Achievements & Awards" className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition duration-300">
-        <img src={Achieve} alt="Achievement & Award" className="w-64 h-64 object-contain"/>
-
-          Achievements & Awards
-        </Link>
-        <Link href="/Background" className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition duration-300">
-        <img src="../assets/Journey.jpg" alt="Journey" className="w-64 h-64 object-contain"/>
-          
-        </Link>
-        <Link href="/Interests" className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition duration-300">
-          My Interests
-        </Link>
+    <div className="relative w-full max-w-4xl mx-auto h-96 overflow-hidden">
+      <div className="relative w-full h-full group">
+        <img
+          src={images[currentIndex].src}
+          alt={`Slide ${currentIndex}`}
+          className="w-full h-full object-cover"
+        />
+        <button
+          onClick={handleClick}
+          className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-1000 bg-black bg-opacity-50 text-white p-4 text-center rounded text-extrabold text-4xl"
+        >
+          . . .
+        </button>
       </div>
+      <button
+        onClick={prevSlide}
+        className="absolute top-1/2 left-2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full"
+      >
+        &#10094;
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute top-1/2 right-2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full"
+      >
+        &#10095;
+      </button>
     </div>
   );
 };
