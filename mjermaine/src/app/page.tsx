@@ -24,21 +24,18 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
-      <nav className="py-4 font-display font-semibold px-4 ">
+      <nav className="mt-10 py-4 font-display font-semibold px-4 ">
         <div className="container mx-auto flex justify-between items-center rounded-full bg-gradient-to-tl from-gray-600 via-blue-700 to-gray-700 py-2 px-4">
           <div className="flex gap-4 md:gap-12 items-center">
-            <a onClick={() => handleClick('home')} className="text-gray-400 hover:text-white duration-1000 cursor-pointer">
-              Home
-            </a>
-            <span className='text-3xl'>&#x1F44B;</span>
             <a onClick={() => handleClick('about')} className="text-gray-400 hover:text-white duration-1000 cursor-pointer">
-              About
+              About Me
             </a>
+          
           </div>
         </div>
       </nav>
 
-      <div id='landingContent' className='flex flex-col items-center justify-center flex-1'>
+      <div className='flex flex-col items-center justify-center flex-1 '>
         <div className='shadow-2xl rounded-full h-48 w-48 sm:h-60 sm:w-60 md:h-72 md:w-72'>
           <img
             src='/assets/CroppedHeadshot.png'
