@@ -31,10 +31,21 @@ body {
     text-wrap: balance;
   }
 }
-.triangle {
-  width: 0;
-  height: 0;
-  border-left: 150px solid transparent;
-  border-right: 150px solid transparent;
-  border-bottom: 300px solid #4A90E2; /* Color of the triangle */
+
+/* styles/globals.css */
+.gradient-border {
+  position: relative;
+  border-radius: inherit;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: -2px; /* Adjust according to border width */
+  left: -2px; /* Adjust according to border width */
+  right: -2px; /* Adjust according to border width */
+  bottom: -2px; /* Adjust according to border width */
+  background: linear-gradient(135deg, #1e3a8a, #2b2b8a, #6d28d9); /* Gradient colors */
+  z-index: -1;
+  border-radius: inherit;
 }

@@ -32,6 +32,8 @@ const Carousel: React.FC = () => {
   return (
     <div className="relative w-full max-w-full h-full max-h-full overflow-hidden">
       <Image
+        width={800}
+        height={800}
         src={images[currentIndex]}
         alt={`Slide ${currentIndex + 1}`}
         className={`absolute inset-0 object-cover w-full h-full transition-opacity duration-700 ${fade}`}

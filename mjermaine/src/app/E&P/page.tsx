@@ -17,7 +17,7 @@ const EPPage = () => {
         {/* Image Section */}
         <div className="p-4 sm:p-0 flex-1 flex items-center justify-center">
           <div className="shadow-2xl w-full max-w-xs md:max-w-md rounded-xl bg-gradient-to-br from-gray-400 via-white to-gray-400 overflow-hidden">
-            <Image src="/assets/pexel.jpg" alt="UWM" className="w-full h-auto" />
+            <Image height={800}  width={800} src="/assets/pexel.jpg" alt="UWM" className="w-full h-auto" />
           </div>
         </div>
 
@@ -36,7 +36,7 @@ const EPPage = () => {
         {/* Image Section */}
         <div className="p-4 sm:p-0 flex-1 flex items-center justify-center">
           <div className="shadow-2xl w-full max-w-xs md:max-w-md rounded-xl bg-gradient-to-br from-gray-300 via-zinc-200 to-zinc-200 overflow-hidden">
-            <Image src="/assets/computer.jpg" alt="UWM" className="w-full h-auto" />
+            <Image height={800} width={800} src="/assets/computer.jpg" alt="UWM" className="w-full h-auto" />
           </div>
         </div>
       </div> 
