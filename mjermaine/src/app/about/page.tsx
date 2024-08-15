@@ -33,7 +33,7 @@ const About: NextPage = () => {
             Who is Michael?
           </h1>
           <p className="mt-2 text-sm sm:text-base md:text-lg lg:text-xl text-gray-600">
-            "If there is no struggle, there is no progress” ~ Frederick Douglass
+          &quot;If there is no struggle, there is no progress&quot; ~ Frederick Douglass
           </p>
         </div>
 

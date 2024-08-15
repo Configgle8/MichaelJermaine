@@ -2,6 +2,7 @@
 // components/Carousel.tsx
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 interface Image {
   src: string;
@@ -33,9 +34,9 @@ const Info: React.FC<CarouselProps> = ({ images }) => {
   return (
     <div className="relative w-full max-w-4xl mx-auto h-96 overflow-hidden">
       <div className="relative w-full h-full group">
-        <img
+        <Image
           src={images[currentIndex].src}
-          alt={`Slide ${currentIndex}`}
+          alt={`ISlide ${currentIndex}`}
           className="w-full h-full object-cover"
         />
         <button

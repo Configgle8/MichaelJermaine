@@ -19,7 +19,7 @@ const Background = () => {
             Milwaukee, Wisconsin
           </h1>
           <p className="text-xs md:text-base font-normal">
-            Born and raised on Milwaukee's north side, I call this city home. Known for its classic Midwest charm and passionate Packers fans, Milwaukee is the best place for a Friday fish fry and cheering on your favorite sports team.
+            Born and raised in Milwaukee, I call this city home. Known for its classic Midwest charm and passionate Packers fans, Milwaukee is the best place for a Friday fish fry and cheering on your favorite sports team.
           </p>
         </div>
 
@@ -28,7 +28,7 @@ const Background = () => {
             Interests
           </h1>
           <p className="text-xs md:text-base font-normal">
-            I’m passionate about sports, especially basketball and UFC, and staying active has always been a part of my life. I also enjoy discovering and experiencing different cultures, finding it both enriching and enlightening.
+            I&apos;m passionate about sports, especially basketball and UFC, and staying active has always been a part of my life. I also enjoy discovering and experiencing different cultures, finding it both enriching and enlightening.
           </p>
         </div>
 
